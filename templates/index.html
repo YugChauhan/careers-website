@@ -59,42 +59,31 @@
     <div class="about">
       <h2 class="text-center">About Careers Website</h2>
     <div class="container">
-      <h5 text>Careers website is a website which hepls people to select their careers and heres you will face many job opportunites
+      <h5 text>Careers website is a website which hepls people to select their careers and heres you will face many job opportunites.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempor scelerisque est, id imperdiet purus porttitor eu. Vivamus ultrices venenatis maximus. Vivamus pretium maximus risus nec consequat. Cras convallis dui eget interdum tempus. Nam feugiat tortor non nibh egestas, sed porttitor tortor bibendum. Duis aliquet magna augue, nec fermentum lectus pellentesque id. Aliquam id orci non massa tristique cursus. Sed dictum nisl eget facilisis mollis. Sed lacus leo, pharetra eu efficitur vitae, iaculis id lectus. Donec nibh felis, pharetra eu sapien quis, vulputate porta lectus. Cras suscipit vitae dolor ut blandit.
 </h5>
     </div>
     </div>
 
-    <section class="container my-5">
+    <section class="container">
     <h2 class="text-center">Current Job Openings</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Job Title 1</h5>
-                    <p class="card-text">Description for Job 1.</p>
-                    <a href="#" class="btn btn-primary">Apply Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Job Title 2</h5>
-                    <p class="card-text">Description for Job 2.</p>
-                    <a href="#" class="btn btn-primary">Apply Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Job Title 3</h5>
-                    <p class="card-text">Description for Job 3.</p>
-                    <a href="#" class="btn btn-primary">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
+       <div class="my-5 row">
+        {% for job in jobs %}
+         <div class="col-9 border-bottom">
+          <div class="mb-4 ">
+            <h5 style="color:grey">{{job["title"]}}</h5>
+            <h5><b>Location: </b>{{job["location"]}}</h5>
+            <h5><b>Salary: </b>{{job["salary"]}}</h5>
+          </div>
+          </div>
+         <div class="col-3 border-bottom">
+            <button type="button" class="btn btn-outline-primary mt-4">Apply</button>
+          </div>
+        {% endfor %}
+      </div>
+     
+     
+
 </section>
 <footer class="bg-dark text-light text-center py-3">
     <div class="container">
